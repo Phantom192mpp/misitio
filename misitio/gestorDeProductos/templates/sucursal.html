@@ -1,0 +1,111 @@
+{% extends "plantillaBase.html" %}
+
+{% block tituloPagina %}
+	<div class="row justify-content-center">
+		<h1>Registro de sucursales</h1>
+	</div>
+{% endblock %}
+
+{% block contenido %}
+	<form action="{% url 'sucursal' %}" method="POST">
+		{% csrf_token %}
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-2">
+				Id
+			</div>
+			<div class="col-8 col-sm-4">
+				<input type="text" name="txtId" class="form-control" value="{{ item.id }}">
+			</div>
+			<div class="col-4 col-sm-2">
+				<input type="submit" name="btnBuscar" class="btn btn-success btn-block"  value="Buscar">
+			</div>
+		</div>
+		<br>
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-2">
+				Nombre
+			</div>
+			<div class="col-12 col-sm-6">
+				<input type="text" 
+				name="txtNombre" 
+				class="form-control" 
+				value="{{ item.nombre }}">
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-2">
+				Dirección 
+			</div>
+			<div class="col-12 col-sm-6">
+				<input type="text" 
+				name="txtDireccion" 
+				class="form-control" 
+				value="{{ item.direccion }}">
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-2">
+				Teléfono
+			</div>
+			<div class="col-12 col-sm-6">
+				<input type="text" 
+				name="txtTelefono" 
+				class="form-control" 
+				value="{{ item.telefono }}">
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-2">
+				Encargado
+			</div>
+			<div class="col-12 col-sm-6">
+				<input type="text" 
+				name="txtEncargado"
+				class="form-control" 
+				value="{{ item.encargado }}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-4 offset-sm-4">
+			<input type="submit" name="btnGuardar" class="btn btn-primary" value="Guardar">
+			<!--<input type="submit" name="btnBuscar" class="btn btn-primary" value="Buscar">-->
+			<input type="submit" name="btnListar" class="btn btn-primary" value="Listar">
+			</div>
+		</div>
+		<br>
+	</form>	
+	<div class="row justify-content-center">
+		<h3>{{ mensaje }}</h3>
+	</div>
+{% endblock %}
+
+{% block listado %}
+{% if listado %}
+	<div class="row justify-content-center">
+		<div>
+			<div class="table-responsive">
+				<table class="table">
+					<thead class="table-active">
+						<th>#</th>
+						<th>Nombre</th>
+						<th>Dirección</th>
+						<th>Teléfono</th>
+						<th>Encargado</th>
+					</thead>
+					<tbody>
+{% for fila in listado %}
+					<tr>
+						<td>{{ fila.id }}</td>
+						<td>{{ fila.nombre }}</td>
+						<td>{{ fila.direccion }}</td>
+						<td>{{ fila.telefono }}</td>
+						<td>{{ fila.encargado }}</td>
+					</tr>
+{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+{% endif %}
+{% endblock%}

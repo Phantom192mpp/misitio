@@ -1,0 +1,145 @@
+
+{% extends "plantillaBase.html" %}
+
+{% block tituloPagina %}
+<div class="row justify-content-center">
+	<h2>Registro de usuarios</h2>
+</div>
+<br></br>
+{% endblock %}
+
+{% block contenido %}
+<div class="row">
+	<div class="col-12 col-md-4">
+		<form  method="POST">
+		{{ form.as_p }}
+		{% csrf_token %}
+	</div>
+</div>
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Run
+		</div>
+		<div class="col-12 col-md-4">
+				<input type="text" id="rut" name="txtRut"
+				class="txtRut form-control"
+				maxlength="10"
+				title="Ingrese su rut"
+				required oninput="checkRut(this)"
+				placeholder="ej: 12250324-6"
+				value="{{ item.password }}">
+				<script src="validarRUT.js"></script>
+		</div>
+	</div>
+
+	<div class="row">
+			<div class="col-12 col-md-1 offset-sm-3">
+				Nombre Completo
+			</div>
+			<div class="col-12 col-md-4">
+				<input type="text"
+				name="txtNombre"
+				title="Ingrese su nombre completo."
+				class="txtNombre form-control"
+				placeholder="ej: Juan Jose Plaza Castillo"
+				required value="{{ item.nombre }}">
+				
+			</div>
+	</div> <br></br>
+
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Email
+			</div>
+			<div class="col-12 col-md-4 justify-content-right">
+				<input type="text"
+				name="txtEmail"
+				class="txtEmail form-control"
+				maxlength="70"
+				placeholder="ej:juanito@gmail.com"
+				required value="{{ item.email }}">
+			</div>
+	</div> <br></br>
+
+
+	</div> <br></br>
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Fecha de nacimiento
+			</div>
+			<div class="col-12 col-md-4 justify-content-right">
+				<input type="date"
+				name="txtNacimiento"
+				class="txtNacimiento form-control"
+				maxlength="50"
+				required value="{{ item.nacimiento}">
+			</div>
+	</div> <br></br>
+
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Telefono de contacto
+		</div>
+		<div class="col-12 col-md-4">
+				<input type="text"
+				name="numberTelefono"
+				class="numberTelefono form-control"
+				maxlength="9"
+				title="Ingrese su número de Telefono"
+				placeholder="Ejemplo: 912345678"
+				required value="{{ item.telefono }}">
+		</div>
+	</div> <br></br>
+
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Region
+		</div>
+		<div class="col-12 col-md-4">
+				<select id="regiones" name="txtRegiones"></select>
+				<script type="text/javascript" src="/static/js/RegionesYcomunas.js"></script>
+		</div>
+	</div> <br></br>
+
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Comuna
+		</div>
+		<div class="col-12 col-md-4">
+				<select id="comunas" name="txtComunas"></select>
+				<script type="text/javascript" src="/static/js/RegionesYcomunas.js"></script>
+		</div>
+	</div> <br></br>
+
+	<div class="row">
+		<div class="col-12 col-md-1 offset-sm-3">
+			Nivel Educacional
+		</div>
+		<div class="col-12 col-md-4">
+			<select name="NivelEducacional">
+				<option disabled selected>Seleccione un nivel Educacional</option>
+				<option value="1">Doctorado</option> 
+				<option value="2">Magíster</option> 
+				<option value="3">Profesional</option>
+				<option value="10">E.Media</option> 
+				<option value="11">E.Basica</option> 
+				<option value="12">Otra</option>
+			</select>
+		</div>
+	</div> <br></br>
+	<button type="submit" class="btnAceptar btn btn-primary float-right" id="btnAceptar">registrar</button>
+</form>
+
+</div>
+	<div class="row">
+	<div class="col-12 col-sm-4 offset-sm-4">
+		<button type="submit" class="btnRegistrar btn btn-success float-right">Comprobar Registro</button>
+		<button class="btnVolver btn btn-secondary float-right" onclick="location.href='index'" >Volver</button>
+		<button class="btnLimpiar btn btn-danger float-right">Limpiar</button>
+		<form action="galeria">
+		
+		<!--<button class="btnAceptar btn btn-primary float-right" id="btnAceptar" disabled="true">Aceptar</button> -->
+		</form>
+	<br></br>
+</div>
+{% endblock %}

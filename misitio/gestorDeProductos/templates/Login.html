@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>e-Commerce</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet"
+<!--===============================================================================================-->
+
+	<link href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}" type="text/css" rel="stylesheet"
+<!--===============================================================================================-->
+	
+	<link href="{% static 'vendor/animate/animate.css' %}" type="text/css" rel="stylesheet"
+<!--===============================================================================================-->	
+	
+	<link href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}" type="text/css" rel="stylesheet"
+<!--===============================================================================================-->
+	
+	<link href="{% static 'vendor/select2/select2.min.css' %}" type="text/css" rel="stylesheet"
+<!--===============================================================================================-->
+	
+	<link href="{% static 'css/mainLogin.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="{% static 'css/util.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{% static 'img/img-01.png' %}">
+				</div>
+
+
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+	
+	<div class="container-login100-form-btn">
+    <button type="submit" class="login100-form-btn">Login</button>
+	</div>
+
+
+
+				<div class="text-center p-t-136">
+						<a class="txt2" href="registro">
+							Crear Cuenta
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+</form>
+	
+<!--===============================================================================================-->	
+	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	
+	<script type="text/javascript" src="js/mainLogin.js"></script>
+</body>
+</html>

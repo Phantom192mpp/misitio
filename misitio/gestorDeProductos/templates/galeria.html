@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,500,600,700" rel="stylesheet" type="text/css">
+    <title>e-Commerce</title>
+    <link rel="icon" type="img/png" href="012-play.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+ 
+	<link href="{% static 'css/css.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/012-play.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                e-Commerce
+            </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactanos">Contacto</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sucursales
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Santiago</a>
+                  <a class="dropdown-item" href="#">Valparaiso</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Pucón</a>
+                </div>
+              </li>				  
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+          </div>
+        </nav>
+        <main>
+
+
+<p>
+    Bienvenido <b>{{request.user.username}}</b>, 
+    esta página es exclusiva para usuarios registrados.
+</p>
+
+            <section id="galeria">
+
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/memoriakingston.png' %}">
+                            <figcaption>Memoria RAM ddr4 8gb </figcaption>
+                            <figcaption>3200mhz hyperx predator rgb Marca kingston</figcaption>
+                            <figcaption>$45.600 </figcaption>
+                            <figcaption>+100 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/crucial.png' %}">
+                            <figcaption>Memoria RAM DDR4 4GB</figcaption>
+                            <figcaption> 2400MHZ DIMM Marca Crucial</figcaption>
+                            <figcaption>$24.990 </figcaption>
+                            <figcaption>+100 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/kinston16.png' %}">
+                            <figcaption>Memoria RAM ddr4 16gb </figcaption>
+                            <figcaption> 2666mhz crucial ballistix</figcaption>
+                            <figcaption>$48.200 </figcaption>
+                            <figcaption>+100 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/msi1050ti.png' %}">
+                            <figcaption>Tarjeta de vídeo </figcaption>
+                            <figcaption> GeForce GTX 1650 SUPER GAMING X de 4GB GDDR6
+                            </figcaption>
+                            <figcaption>Marca MSI</figcaption>
+                            <figcaption>$229.824 </figcaption>
+                            <figcaption>94 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/rtx.jpg' %}">
+                            <figcaption>Tarjeta de Video NVIDIA GeForce RTX2060S </figcaption>
+                            <figcaption>A8G ROG Strix EVO </figcaption>
+                            <figcaption>Marca Asus</figcaption>
+                            <figcaption>$549.990 </figcaption>
+                            <figcaption>59 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/amdRadeon.jpg' %}">
+                            <figcaption>Tarjeta de Video AMD Radeon RX 5700XT </figcaption>
+                            <figcaption> O8GB Dual EVO</figcaption>
+                            <figcaption>Marca Asus</figcaption>
+                            <figcaption>$530.290 </figcaption>
+                            <figcaption>80 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/ryzen7.jpg' %}">
+                            <figcaption>CPU Ryzen 7 </figcaption>
+                            <figcaption> 3800XT de 8 nucleos</figcaption>
+                            <figcaption>Marca AMD </figcaption>
+                            <figcaption>$469.990 </figcaption>
+                            <figcaption>50 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/i9-10.jpg' %}">
+                            <figcaption>CPU Core i9-10900KF </figcaption>
+                            <figcaption>3.7GHz 16MB </figcaption>
+                            <figcaption>Marca Intel</figcaption>
+                            <figcaption>$543.090</figcaption>
+                            <figcaption>20 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <article>
+                    <a target="_blank" href="#">
+                        <figure>
+                            <img src="{% static 'img/i7-10.jpg' %}">
+                            <figcaption>CPU Core i7-10700K </figcaption>
+                            <figcaption>3.8GHz16MB </figcaption>
+                            <figcaption>Marca Intel</figcaption>
+                            <figcaption>$449.990 </figcaption>
+                            <figcaption>+100 unidades</figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+
+<a href="/logout">Cerrar sesión</a>
+            </section>
+        </main>
+
+</body>
+
+</html>

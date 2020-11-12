@@ -1,0 +1,60 @@
+:root{
+    --dark: #000000;
+    --white: #ffffff;
+    --light-grey: #efefef;
+    --gold: #ecd5a7;
+}
+
+body{
+    font-family:'Roboto Condensed', sans-serif;
+    font-size: 1ren;
+    font-weight: 300;
+    letter-spacing: .05ren;
+    background-color: var(--white);
+
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand{
+    font-family: 'Oswald', sans-serif;
+    font-weight:  500 !important;
+    line-height: 1.5 !important;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
+}
+
+.navbar-toggler{
+    background-color: white;
+}
+
+.navbar{
+min-height: 5ren;
+}
+
+.nav-link{
+    color: var(--white) !important;
+    text-transform: uppercase;
+    font-size: .8ren;
+}
+
+section{
+    padding: 6ren 0;
+}
+
+#slider{
+    padding: 5ren 0 0 0;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+}
